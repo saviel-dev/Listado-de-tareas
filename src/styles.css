@@ -1,0 +1,177 @@
+:root {
+    --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --line-height: 1.5;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --color-light: rgba(255, 255, 255, 0.87);
+    --color-dark: #242424;
+    --color-primary: #646cff;
+    --color-primary-hover: #535bf2;
+    --color-danger: #dc3545;
+    --color-danger-hover: #c82333;
+    --color-success: #14B8A6;
+    --color-success-hover: #11998a;
+    --color-background: #1a1a1a;
+    --color-border: #ccc;
+    --color-text: #213547;
+    --color-background-light: #ffffff;
+    --padding-small: 10px;
+    --padding-medium: 20px;
+    --border-radius: 8px;
+    --transition: 0.25s;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinea el contenido en la parte superior */
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: var(--padding-medium);
+    color: var(--color-light);
+}
+
+button {
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    padding: var(--padding-small) var(--padding-medium);
+    font-size: 1em;
+    font-weight: var(--font-weight-medium);
+    font-family: inherit;
+    background-color: var(--color-background);
+    cursor: pointer;
+    transition: border-color var(--transition);
+    margin: 0 10px;
+    color: var(--color-light);
+}
+
+button:hover {
+    border-color: var(--color-primary);
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Estilos específicos para la aplicación */
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: var(--padding-medium);
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--padding-small);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: var(--padding-small);
+    font-size: 1em;
+    margin-bottom: var(--padding-small);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-small);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--padding-small);
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+    border-radius: var(--border-radius);
+    width: 100%;
+}
+
+.task .botones button {
+    margin: 0 5px;
+}
+
+.task .botones button[id="borrar"] {
+    background-color: var(--color-danger);
+    color: var(--color-light);
+}
+
+.task .botones button[id="borrar"]:hover {
+    background-color: var(--color-danger-hover);
+}
+
+.task .botones button[id="editar"] {
+    background-color: var(--color-success);
+    color: var(--color-light);
+}
+
+.task .botones button[id="editar"]:hover {
+    background-color: var(--color-success-hover);
+}
+
+.taskList {
+    width: 100%;
+    margin: var(--padding-medium) 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: var(--padding-small);
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task .botones {
+        margin-top: var(--padding-small);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .task .botones {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-small);
+    }
+}
